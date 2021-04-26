@@ -53,12 +53,15 @@ Examples:
 
 function hasNoDuplicates(arr) {
   const newArr = [];
-  return arr.some(function (val) {
-    if (!newArr.indexOf(val)) {
-      newArr.push(val);
+  let hasDuplicate = arr.some(function (val) {
+    if (newArr.indexOf(val) !== -1) {
       return true;
+    } else {
+      newArr.push(val);
+      return false;
     }
   });
+  return !hasDuplicate;
 }
 
 /*
